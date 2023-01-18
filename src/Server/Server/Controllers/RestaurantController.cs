@@ -28,9 +28,9 @@ namespace Server.Controllers
         {
             try
             {
-                MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("DinerHubConn"));
+                MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("RistoHubConn"));
 
-                var dbList = dbClient.GetDatabase("dinerhub").GetCollection<Restaurant>("Restaurant").AsQueryable();
+                var dbList = dbClient.GetDatabase("ristohub").GetCollection<Restaurant>("Restaurant").AsQueryable();
 
                 return Ok(dbList);
             }
@@ -53,11 +53,11 @@ namespace Server.Controllers
             {
                 if (Regex.IsMatch(id.ToString(), _configuration["Regex:Id"]))
                 {
-                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("DinerHubConn"));
+                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("RistoHubConn"));
 
                     var filter = Builders<Restaurant>.Filter.Eq("RestaurantId", id);
 
-                    var collection = dbClient.GetDatabase("dinerhub").GetCollection<Restaurant>("Restaurant");
+                    var collection = dbClient.GetDatabase("ristohub").GetCollection<Restaurant>("Restaurant");
                     var dbList = collection.Find(filter).FirstOrDefault();
 
                     // Hide password
@@ -94,27 +94,27 @@ namespace Server.Controllers
                     && Regex.IsMatch(restaurant.Email.ToString().ToLower(), _configuration["Regex:Email"])
                     )
                 {
-                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("DinerHubConn"));
+                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("RistoHubConn"));
 
                     // Email must be unique
                     var filterEmailRestaurant = Builders<Restaurant>.Filter.Eq("Email", restaurant.Email);
-                    var collectionRestaurant = dbClient.GetDatabase("dinerhub").GetCollection<Restaurant>("Restaurant");
+                    var collectionRestaurant = dbClient.GetDatabase("ristohub").GetCollection<Restaurant>("Restaurant");
                     var dbListRestaurant = collectionRestaurant.Find(filterEmailRestaurant).FirstOrDefault();
 
                     var filterEmailUser = Builders<User>.Filter.Eq("Email", restaurant.Email);
-                    var collectionUser = dbClient.GetDatabase("dinerhub").GetCollection<User>("User");
+                    var collectionUser = dbClient.GetDatabase("ristohub").GetCollection<User>("User");
                     var dbListUser = collectionUser.Find(filterEmailUser).FirstOrDefault();
 
                     if (dbListRestaurant == null && dbListUser == null)
                     {
                         // Get last element and create a new id for the new user
-                        var dbRestaurantList = dbClient.GetDatabase("dinerhub").GetCollection<Restaurant>("Restaurant").AsQueryable().ToList();
+                        var dbRestaurantList = dbClient.GetDatabase("ristohub").GetCollection<Restaurant>("Restaurant").AsQueryable().ToList();
                         int LastRestaurantId = dbRestaurantList.Count > 0 ? dbRestaurantList.Last().RestaurantId : 0;
                         restaurant.RestaurantId = LastRestaurantId + 1;
 
                         restaurant.Email = restaurant.Email.ToLower();
 
-                        dbClient.GetDatabase("dinerhub").GetCollection<Restaurant>("Restaurant").InsertOne(restaurant);
+                        dbClient.GetDatabase("ristohub").GetCollection<Restaurant>("Restaurant").InsertOne(restaurant);
 
                         return Ok("Restaurant added successfully!");
                     }
@@ -153,11 +153,11 @@ namespace Server.Controllers
                         && Regex.IsMatch(restaurant.Email.ToString().ToLower(), _configuration["Regex:Email"])
                         )
                     {
-                        MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("DinerHubConn"));
+                        MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("RistoHubConn"));
 
                         var filter = Builders<Restaurant>.Filter.Eq("RestaurantId", restaurant.RestaurantId);
 
-                        var collection = dbClient.GetDatabase("dinerhub").GetCollection<Restaurant>("Restaurant");
+                        var collection = dbClient.GetDatabase("ristohub").GetCollection<Restaurant>("Restaurant");
                         var dbList = collection.Find(filter).FirstOrDefault();
 
                     if (dbList != null)
@@ -168,7 +168,7 @@ namespace Server.Controllers
 
                         var combineFiltersEmail = Builders<Restaurant>.Filter.And(filterEmailRestaurant, filterIdRestaurant);
 
-                        var collectionRestaurant = dbClient.GetDatabase("dinerhub").GetCollection<Restaurant>("Restaurant");
+                        var collectionRestaurant = dbClient.GetDatabase("ristohub").GetCollection<Restaurant>("Restaurant");
                         var dbListRestaurant = collectionRestaurant.Find(combineFiltersEmail).FirstOrDefault();
 
                         if (dbListRestaurant == null)
@@ -180,7 +180,7 @@ namespace Server.Controllers
                                                                 .Set("Psw", restaurant.Psw)
                                                                 .Set("IsRestaurant", true);     // Cannot override IsRestaurant
 
-                            dbClient.GetDatabase("dinerhub").GetCollection<Restaurant>("Restaurant").UpdateOne(filter, update);
+                            dbClient.GetDatabase("ristohub").GetCollection<Restaurant>("Restaurant").UpdateOne(filter, update);
 
                             return Ok("Update Successfully");
                         }
@@ -219,16 +219,16 @@ namespace Server.Controllers
             {
                 if (Regex.IsMatch(id.ToString(), _configuration["Regex:Id"]))
                 {
-                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("DinerHubConn"));
+                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("RistoHubConn"));
 
                     var filter = Builders<Restaurant>.Filter.Eq("RestaurantId", id);
 
-                    var collection = dbClient.GetDatabase("dinerhub").GetCollection<Restaurant>("Restaurant");
+                    var collection = dbClient.GetDatabase("ristohub").GetCollection<Restaurant>("Restaurant");
                     var dbList = collection.Find(filter).FirstOrDefault();
 
                     if (dbList != null)
                     {
-                        dbClient.GetDatabase("dinerhub").GetCollection<Restaurant>("Restaurant").DeleteOne(filter);
+                        dbClient.GetDatabase("ristohub").GetCollection<Restaurant>("Restaurant").DeleteOne(filter);
 
                         return Ok("Deleted Successfully");
                     }

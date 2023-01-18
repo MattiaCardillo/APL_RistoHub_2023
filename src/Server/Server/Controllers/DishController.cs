@@ -28,9 +28,9 @@ namespace Server.Controllers
         {
             try
             {
-                MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("DinerHubConn"));
+                MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("RistoHubConn"));
 
-                var dbList = dbClient.GetDatabase("dinerhub").GetCollection<Dish>("Dish").AsQueryable();
+                var dbList = dbClient.GetDatabase("ristohub").GetCollection<Dish>("Dish").AsQueryable();
 
                 return Ok(dbList);
             }
@@ -54,11 +54,11 @@ namespace Server.Controllers
             {
                 if (Regex.IsMatch(id.ToString(), _configuration["Regex:Id"]))
                 {
-                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("DinerHubConn"));
+                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("RistoHubConn"));
 
                     var filter = Builders<Dish>.Filter.Eq("DishId", id);
 
-                    var collection = dbClient.GetDatabase("dinerhub").GetCollection<Dish>("Dish");
+                    var collection = dbClient.GetDatabase("ristohub").GetCollection<Dish>("Dish");
                     var dbList = collection.Find(filter).FirstOrDefault();
 
                     return Ok(dbList);
@@ -90,14 +90,14 @@ namespace Server.Controllers
                         && Regex.IsMatch(dish.Price.ToString(), _configuration["Regex:DishPrice"])
                         )
                 {
-                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("DinerHubConn"));
+                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("RistoHubConn"));
 
                     // Get last element and create a new id for the new user
-                    var dbDishList = dbClient.GetDatabase("dinerhub").GetCollection<Dish>("Dish").AsQueryable().ToList();
+                    var dbDishList = dbClient.GetDatabase("ristohub").GetCollection<Dish>("Dish").AsQueryable().ToList();
                     int LastDishId = dbDishList.Count > 0 ? dbDishList.Last().DishId : 0;
                     dish.DishId = LastDishId + 1;
 
-                    dbClient.GetDatabase("dinerhub").GetCollection<Dish>("Dish").InsertOne(dish);
+                    dbClient.GetDatabase("ristohub").GetCollection<Dish>("Dish").InsertOne(dish);
 
                     return Ok("Dish added successfully!");
                 }
@@ -128,11 +128,11 @@ namespace Server.Controllers
                         && Regex.IsMatch(dish.Price.ToString(), _configuration["Regex:DishPrice"])
                         )
                 {
-                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("DinerHubConn"));
+                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("RistoHubConn"));
 
                     var filter = Builders<Dish>.Filter.Eq("DishId", dish.DishId);
 
-                    var collection = dbClient.GetDatabase("dinerhub").GetCollection<Dish>("Dish");
+                    var collection = dbClient.GetDatabase("ristohub").GetCollection<Dish>("Dish");
                     var dbList = collection.Find(filter).FirstOrDefault();
 
                     if (dbList != null)
@@ -142,7 +142,7 @@ namespace Server.Controllers
                                                             .Set("Price", dish.Price)
                                                             .Set("RestaurantId", dbList.RestaurantId);     // Cannot override RestaurantId
 
-                        dbClient.GetDatabase("dinerhub").GetCollection<Dish>("Dish").UpdateOne(filter, update);
+                        dbClient.GetDatabase("ristohub").GetCollection<Dish>("Dish").UpdateOne(filter, update);
 
                         return Ok("Dish update successfully!");
                     }
@@ -176,16 +176,16 @@ namespace Server.Controllers
             {
                 if (Regex.IsMatch(id.ToString(), _configuration["Regex:Id"]))
                 {
-                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("DinerHubConn"));
+                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("RistoHubConn"));
 
                     var filter = Builders<Dish>.Filter.Eq("DishId", id);
 
-                    var collection = dbClient.GetDatabase("dinerhub").GetCollection<Dish>("Dish");
+                    var collection = dbClient.GetDatabase("ristohub").GetCollection<Dish>("Dish");
                     var dbList = collection.Find(filter).FirstOrDefault();
 
                     if (dbList != null)
                     {
-                        dbClient.GetDatabase("dinerhub").GetCollection<Dish>("Dish").DeleteOne(filter);
+                        dbClient.GetDatabase("ristohub").GetCollection<Dish>("Dish").DeleteOne(filter);
 
                         return Ok("Dish deleted successfully!");
                     }
@@ -219,11 +219,11 @@ namespace Server.Controllers
             {
                 if (Regex.IsMatch(restaurantId.ToString(), _configuration["Regex:Id"]))
                 {
-                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("DinerHubConn"));
+                    MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("RistoHubConn"));
 
                     var filter = Builders<Dish>.Filter.Eq("RestaurantId", restaurantId);
 
-                    var collection = dbClient.GetDatabase("dinerhub").GetCollection<Dish>("Dish");
+                    var collection = dbClient.GetDatabase("ristohub").GetCollection<Dish>("Dish");
                     var dbList = collection.Find(filter).ToList();
 
                     if (dbList != null)
