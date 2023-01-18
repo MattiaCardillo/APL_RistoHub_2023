@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "6210ca03145c41a5091e7fe2"
+  },
+  "RestaurantId": 1,
+  "Name": "Trattoria",
+  "Address": "Via Etnea, 35",
+  "Phone": "0956624153",
+  "Email": "trattoria@gmail.com",
+  "Psw": "16dbf60834e72e8af071981ea6eb2b18cec0934257719ee9eaa6bed91c81a3c8",
+  "IsRestaurant": false
+},{
+  "_id": {
+    "$oid": "6210ca2d145c41a5091e7fe3"
+  },
+  "RestaurantId": 2,
+  "Name": "PizzeriaMatta",
+  "Address": "Corso Sicilia, 350",
+  "Phone": "09511245876",
+  "Email": "pizzeria.matta@gmail.com",
+  "Psw": "16dbf60834e72e8af071981ea6eb2b18cec0934257719ee9eaa6bed91c81a3c8",
+  "IsRestaurant": false
+},{
+  "_id": {
+    "$oid": "6210ca57145c41a5091e7fe4"
+  },
+  "RestaurantId": 3,
+  "Name": "Ristorante-Duca",
+  "Address": "Via Italia, 94",
+  "Phone": "3321458964",
+  "Email": "ristorante.duca@gmail.com",
+  "Psw": "16dbf60834e72e8af071981ea6eb2b18cec0934257719ee9eaa6bed91c81a3c8",
+  "IsRestaurant": false
+},{
+  "_id": {
+    "$oid": "6210ca84145c41a5091e7fe5"
+  },
+  "RestaurantId": 4,
+  "Name": "Gelateria",
+  "Address": "Corso Europa, 45",
+  "Phone": "3201568745",
+  "Email": "gelateria@gmail.com",
+  "Psw": "16dbf60834e72e8af071981ea6eb2b18cec0934257719ee9eaa6bed91c81a3c8",
+  "IsRestaurant": false
+}]
