@@ -1,0 +1,123 @@
+[{
+  "_id": {
+    "$oid": "6210c8314302316b94f10bf3"
+  },
+  "UserId": 1,
+  "Name": "Admin",
+  "Surname": "Admin",
+  "Email": "admin@ristohub.com",
+  "Psw": "16dbf60834e72e8af071981ea6eb2b18cec0934257719ee9eaa6bed91c81a3c8",
+  "Phone": "3325695746",
+  "Balance": 0,
+  "BirthDate": {
+    "$date": "1990-06-03T22:00:00Z"
+  },
+  "IsAdmin": true
+},{
+  "_id": {
+    "$oid": "6210c885145c41a5091e7fdb"
+  },
+  "UserId": 2,
+  "Name": "Mario",
+  "Surname": "Rossi",
+  "Email": "mario.rossi@gmail.com",
+  "Psw": "16dbf60834e72e8af071981ea6eb2b18cec0934257719ee9eaa6bed91c81a3c8",
+  "Phone": "0956622174",
+  "Balance": 2.3,
+  "BirthDate": {
+    "$date": {
+      "$numberLong": "-33613200000"
+    }
+  },
+  "IsAdmin": false
+},{
+  "_id": {
+    "$oid": "6210c8be145c41a5091e7fdc"
+  },
+  "UserId": 3,
+  "Name": "Luigi",
+  "Surname": "Bianchi",
+  "Email": "luigi.bianchi@gmail.com",
+  "Psw": "16dbf60834e72e8af071981ea6eb2b18cec0934257719ee9eaa6bed91c81a3c8",
+  "Phone": "0931745896",
+  "Balance": 54.2,
+  "BirthDate": {
+    "$date": "1984-02-08T23:00:00Z"
+  },
+  "IsAdmin": false
+},{
+  "_id": {
+    "$oid": "6210c8ea145c41a5091e7fdd"
+  },
+  "UserId": 4,
+  "Name": "Luca",
+  "Surname": "Verdi",
+  "Email": "luca.verdi@gmail.com",
+  "Psw": "16dbf60834e72e8af071981ea6eb2b18cec0934257719ee9eaa6bed91c81a3c8",
+  "Phone": "3369584756",
+  "Balance": 219.4,
+  "BirthDate": {
+    "$date": "1981-11-01T23:00:00Z"
+  },
+  "IsAdmin": false
+},{
+  "_id": {
+    "$oid": "6210c943145c41a5091e7fde"
+  },
+  "UserId": 5,
+  "Name": "John",
+  "Surname": "Doe",
+  "Email": "john.doe@gmail.com",
+  "Psw": "16dbf60834e72e8af071981ea6eb2b18cec0934257719ee9eaa6bed91c81a3c8",
+  "Phone": "12567895410",
+  "Balance": 91,
+  "BirthDate": {
+    "$date": "1990-02-01T23:00:00Z"
+  },
+  "IsAdmin": false
+},{
+  "_id": {
+    "$oid": "6210c994145c41a5091e7fdf"
+  },
+  "UserId": 6,
+  "Name": "Ugo",
+  "Surname": "Pugliesi",
+  "Email": "ugo.pugliesi@gmail.com",
+  "Psw": "16dbf60834e72e8af071981ea6eb2b18cec0934257719ee9eaa6bed91c81a3c8",
+  "Phone": "09122335964",
+  "Balance": 164,
+  "BirthDate": {
+    "$date": "1994-10-09T22:00:00Z"
+  },
+  "IsAdmin": false
+},{
+  "_id": {
+    "$oid": "6210c9b2145c41a5091e7fe0"
+  },
+  "UserId": 7,
+  "Name": "Maria",
+  "Surname": "Udinese",
+  "Email": "maria.udinese@gmail.com",
+  "Psw": "16dbf60834e72e8af071981ea6eb2b18cec0934257719ee9eaa6bed91c81a3c8",
+  "Phone": "1125698310",
+  "Balance": 223.1,
+  "BirthDate": {
+    "$date": "1993-08-31T22:00:00Z"
+  },
+  "IsAdmin": false
+},{
+  "_id": {
+    "$oid": "6210c9d2145c41a5091e7fe1"
+  },
+  "UserId": 8,
+  "Name": "Lucia",
+  "Surname": "Esposito",
+  "Email": "lucia.esposito@gmail.com",
+  "Psw": "16dbf60834e72e8af071981ea6eb2b18cec0934257719ee9eaa6bed91c81a3c8",
+  "Phone": "0563120153",
+  "Balance": 208.5,
+  "BirthDate": {
+    "$date": "2000-06-02T22:00:00Z"
+  },
+  "IsAdmin": false
+}]
