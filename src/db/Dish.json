@@ -1,0 +1,145 @@
+[{
+  "_id": {
+    "$oid": "6210cad4145c41a5091e7fe6"
+  },
+  "DishId": 1,
+  "Name": "Polpette",
+  "Type": 0,
+  "Price": 5.5,
+  "RestaurantId": 1
+},{
+  "_id": {
+    "$oid": "6210caf9145c41a5091e7fe7"
+  },
+  "DishId": 2,
+  "Name": "Pasta al ragu",
+  "Type": 1,
+  "Price": 6,
+  "RestaurantId": 1
+},{
+  "_id": {
+    "$oid": "6210cb0d145c41a5091e7fe8"
+  },
+  "DishId": 3,
+  "Name": "Bistecca",
+  "Type": 2,
+  "Price": 15,
+  "RestaurantId": 1
+},{
+  "_id": {
+    "$oid": "6210cb20145c41a5091e7fe9"
+  },
+  "DishId": 4,
+  "Name": "Vino della casa",
+  "Type": 4,
+  "Price": 6.3,
+  "RestaurantId": 1
+},{
+  "_id": {
+    "$oid": "6210cb4e145c41a5091e7fea"
+  },
+  "DishId": 5,
+  "Name": "Margherita",
+  "Type": 1,
+  "Price": 4.5,
+  "RestaurantId": 2
+},{
+  "_id": {
+    "$oid": "6210cb59145c41a5091e7feb"
+  },
+  "DishId": 6,
+  "Name": "Capricciosa",
+  "Type": 1,
+  "Price": 6,
+  "RestaurantId": 2
+},{
+  "_id": {
+    "$oid": "6210cb72145c41a5091e7fec"
+  },
+  "DishId": 7,
+  "Name": "Biancaneve",
+  "Type": 1,
+  "Price": 4.7,
+  "RestaurantId": 2
+},{
+  "_id": {
+    "$oid": "6210cb8e145c41a5091e7fed"
+  },
+  "DishId": 8,
+  "Name": "Pasta allo scoglio",
+  "Type": 1,
+  "Price": 8,
+  "RestaurantId": 3
+},{
+  "_id": {
+    "$oid": "6210cbae145c41a5091e7fee"
+  },
+  "DishId": 9,
+  "Name": "Gamberi",
+  "Type": 2,
+  "Price": 8.5,
+  "RestaurantId": 3
+},{
+  "_id": {
+    "$oid": "6210cbb8145c41a5091e7fef"
+  },
+  "DishId": 10,
+  "Name": "Cheesecake",
+  "Type": 3,
+  "Price": 5,
+  "RestaurantId": 3
+},{
+  "_id": {
+    "$oid": "6210cbc3145c41a5091e7ff0"
+  },
+  "DishId": 11,
+  "Name": "Sorbetto al limone",
+  "Type": 3,
+  "Price": 4,
+  "RestaurantId": 3
+},{
+  "_id": {
+    "$oid": "6210cbdd145c41a5091e7ff1"
+  },
+  "DishId": 12,
+  "Name": "Coppetta media",
+  "Type": 3,
+  "Price": 4,
+  "RestaurantId": 4
+},{
+  "_id": {
+    "$oid": "6210cbe7145c41a5091e7ff2"
+  },
+  "DishId": 13,
+  "Name": "Cono",
+  "Type": 3,
+  "Price": 3.5,
+  "RestaurantId": 4
+},{
+  "_id": {
+    "$oid": "6210cbf1145c41a5091e7ff3"
+  },
+  "DishId": 14,
+  "Name": "Coppetta grande",
+  "Type": 3,
+  "Price": 5,
+  "RestaurantId": 4
+},{
+  "_id": {
+    "$oid": "6210cbfd145c41a5091e7ff4"
+  },
+  "DishId": 15,
+  "Name": "Crepe",
+  "Type": 3,
+  "Price": 6,
+  "RestaurantId": 4
+},{
+  "_id": {
+    "$oid": "6210cc08145c41a5091e7ff5"
+  },
+  "DishId": 16,
+  "Name": "Waffle",
+  "Type": 3,
+  "Price": 4.5,
+  "RestaurantId": 4
+}]
