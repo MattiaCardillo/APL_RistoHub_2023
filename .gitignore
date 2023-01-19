@@ -6,3 +6,12 @@ src/Server/.vs/Server/DesignTimeBuild/.dtbcache.v2
 src/Server/.vs/Server/v17/.suo
 *Debug/
 src/Server/.vs/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.Python
+env/
+*.log
+*idea/
+*.iml
