@@ -1,6 +1,5 @@
 # RistoHub
 
-##
 Lo scopo dell’elaborato è quello di realizzare un’applicazione che consenta la gestione degli ordini nei ristoranti.
 
 All'interno della directory __*/src*__ si trova il codice sorgente dei moduli che compongono l'applicazione, suddiviso in subdirectory.
