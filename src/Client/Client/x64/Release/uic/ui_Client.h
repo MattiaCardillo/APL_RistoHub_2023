@@ -151,7 +151,7 @@ public:
         emailError->setText(QString());
         pswLabel->setText(QCoreApplication::translate("ClientClass", "Password", nullptr));
         pswError->setText(QString());
-        ristoHubName->setText(QCoreApplication::translate("ClientClass", "DinerHub", nullptr));
+        ristoHubName->setText(QCoreApplication::translate("ClientClass", "RistoHub", nullptr));
         loginButton->setText(QCoreApplication::translate("ClientClass", "LOGIN", nullptr));
         registerButton->setText(QCoreApplication::translate("ClientClass", "Not registered yet? Create an account!", nullptr));
     } // retranslateUi
